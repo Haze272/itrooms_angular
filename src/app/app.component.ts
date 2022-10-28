@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'itrooms_angular';
+  count: number = 0;
+
+  public onNumberChanged($event: any) {
+    this.count = $event;
+  }
 }

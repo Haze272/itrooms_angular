@@ -1,0 +1,20 @@
+<h2>Список дел:</h2>
+<div class="todo-wrapper">
+    <div class="input-section">
+        <div class="add-form">
+            <input type="text" placeholder="Введите название дела" #dealName>
+            <input type="text" placeholder="Введите описание дела" #dealDesc>
+            <p>Дедлайн:</p>
+            <input type="date" #dealDeadline>
+            <button class="beautiful-btn" type="submit" (click)="addToDo(dealName.value, dealDesc.value, dealDeadline.value)">Добавить дело</button>
+        </div>
+    </div>
+    <div class="todo-list">
+        <div class="todo-element" *ngFor="let todo of getElements(); let key = index">
+            <p>Название: {{ todo.name }} <input type="checkbox" (click)="deleteElement(key)"></p>
+            <p>Описание: {{ todo.description }}</p>
+            <p>Дата создания: {{ todo.createdDate }}</p>
+            <p>Дедлайн: {{ todo.deadline }}</p>
+        </div>
+    </div>
+</div>
